@@ -1,0 +1,21 @@
+# 🚨 Ignore Node.js dependencies
+node_modules/
+.next/
+dist/
+
+# 🚀 Ignore Solana Build Artifacts
+target/
+Cargo.lock
+target/deploy/
+*.so
+
+# 🔐 Ignore Private Keys & Secrets
+.env
+*.key
+id.json
+keypair.json
+
+# 💻 Ignore Local System Files
+.DS_Store
+Thumbs.db
+*.log
