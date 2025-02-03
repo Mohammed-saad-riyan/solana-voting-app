@@ -1,34 +1,86 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🗳️ Decentralized Voting App on Solana  
 
-## Getting Started
+![Solana](https://img.shields.io/badge/Built_on-Solana-3ab7ff?style=for-the-badge&logo=solana)  
+![Next.js](https://img.shields.io/badge/Frontend-Next.js-black?style=for-the-badge&logo=next.js)  
+![Rust](https://img.shields.io/badge/Smart_Contract-Rust-blue?style=for-the-badge&logo=rust)  
+![Firebase](https://img.shields.io/badge/Database-Firebase-orange?style=for-the-badge&logo=firebase)  
+![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)  
 
-First, run the development server:
 
-```bash
+Project Overview**
+**What is This Project?**
+This is a **Decentralized Voting Application** built on **Solana Blockchain**, where users can:
+- ✅ **Connect Phantom Wallet**
+- ✅ **Vote for 3 candidates (Votes stored on-chain)**
+- ✅ **Ensure only verified users (via college email) can vote**
+- ✅ **Prevent double-voting**
+- ✅ **Fetch real-time vote counts from the blockchain**
+
+**This DApp is fully decentralized, meaning all votes are stored securely on the Solana blockchain.**  
+It is built using **Next.js (React), TypeScript, Solana Smart Contracts (Rust), and Firebase**.
+
+---
+
+![PHOTO-2025-02-03-22-05-32](https://github.com/user-attachments/assets/55495e12-138e-43cb-98f3-75365000fb4e)
+
+
+---
+
+**Tech Stack**
+| **Technology**     | **Usage**                      |
+|--------------------|--------------------------------|
+| **Solana**         | Blockchain for voting storage  |
+| **Rust**           | Smart Contract (Solana Program)|
+| **Next.js**        | Frontend UI                    |
+| **TypeScript**     | Type-safe Frontend Code        |
+| **Firebase**       | Email Verification Backend     |
+| **Solana Web3.js** | Blockchain Interactions        |
+| **Phantom Wallet** | User Authentication            |
+
+---
+
+## **Smart Contract (Rust)**
+### **How It Works**
+1.**Each candidate has an on-chain Solana account** that stores their vote count.
+2.**Users vote by sending transactions** to the Solana program.
+3.**The program checks the voter's identity & updates the vote count.**
+4.**Frontend fetches real-time vote counts** from the blockchain.
+
+**Installation & Setup**
+1. Install Dependencies
+git clone https://github.com/YOUR_USERNAME/solana-voting-dapp.git
+cd solana-voting-dapp
+npm install
+
+2️ Start the Development Server
 npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Deploying the Solana Smart Contract**
+1. Install Solana & Setup CLI
+sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+solana --version
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+2. Configure Devnet
+solana config set --url https://api.devnet.solana.com
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+3. Build & Deploy the Smart Contract
+cd programs/solana-voting-program
+cargo build-sbf
+solana program deploy ./target/deploy/solana_voting_program.so
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+**How to Use the App**
+1. Connect Phantom Wallet
+Click on "Connect Wallet" (Phantom required).
+Approve the connection.
+2. Verify Your Email
+Enter your college email (@mjcollege.ac.in).
+Receive a verification code and confirm.
+3. Vote for a Candidate
+Click "Vote" under your chosen candidate.
+Approve the Solana transaction in Phantom.
+4. View Live Results
+Vote counts update automatically from the blockchain.
 
-## Learn More
+**Live Working**
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+https://github.com/user-attachments/assets/5b1a328e-2636-4563-bc01-4342135c11cb
